@@ -4,12 +4,12 @@
     "name": "optimelv",
     "url": "https://github.com/optimelv"
   },
-  "description": "A self-hosting marketplace for the Contextual Writing plugin.",
+  "description": "Install Contextual Writing for Claude Code.",
   "plugins": [
     {
       "name": "contextual-writing",
       "source": "./",
-      "description": "Context-aware German and English writing, editing, intake, and lightweight research system."
+      "description": "German and English writing skills for applications, academic work, emails, research, and slides."
     }
   ]
 }

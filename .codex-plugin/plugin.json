@@ -1,7 +1,7 @@
 {
   "name": "contextual-writing",
   "version": "0.1.4",
-  "description": "A context-aware German and English writing, editing, intake, and lightweight research system.",
+  "description": "German and English writing skills for applications, academic work, emails, research, and slides.",
   "homepage": "https://github.com/optimelv/contextual-writing-skill",
   "repository": "https://github.com/optimelv/contextual-writing-skill",
   "author": {
@@ -20,8 +20,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Contextual Writing",
-    "shortDescription": "Context-aware writing without generic AI style.",
-    "longDescription": "Create, research, edit, and quality-check German and English content through context gates, evidence locks, optional style profiles, and deliverable-specific workflows.",
+    "shortDescription": "Writing and editing in German and English.",
+    "longDescription": "Draft and edit applications, academic work, emails, and slide content. Use your brief and source material, preserve facts, and check requirements before submission.",
     "developerName": "Contextual Writing contributors",
     "category": "Productivity",
     "capabilities": [
@@ -31,9 +31,9 @@
       "Review"
     ],
     "defaultPrompt": [
-      "Build a tailored CV from my verified experience.",
-      "Draft this message for the actual recipient and goal.",
-      "Audit this text and change only what improves it."
+      "Write a CV using my experience and this job description.",
+      "Turn these notes into an email to my client.",
+      "Edit this text for clarity. Keep the facts and my tone."
     ]
   }
 }

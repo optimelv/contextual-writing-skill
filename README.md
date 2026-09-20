@@ -7,7 +7,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-a3422e?labelColor=242421" alt="MIT license"></a>
 </p>
 
-German and English writing skills for **Claude and Codex**. Draft, research, edit, and review using the actual brief, audience, evidence, and author's voice. A cover letter, a research paragraph, and a client email should not all sound the same.
+Writing skills for **Claude and Codex**, in German and English. Use them for applications, academic writing, emails, research, and slide content, with rules suited to each format.
 
 [Install](#install) · [Example](#see-the-difference) · [Templates](#template-gallery) · [Skills](#components) · [Validation](#validation)
 
@@ -21,8 +21,6 @@ Inside Claude Code, add the marketplace and install the plugin:
 /plugin marketplace add optimelv/contextual-writing-skill
 /plugin install contextual-writing@contextual-writing
 ```
-
-The repository contains both the marketplace and the plugin.
 
 <details>
 <summary><strong>Update or uninstall</strong></summary>
@@ -54,108 +52,94 @@ Choose your agent when prompted. To install directly for Codex:
 npx skills add optimelv/contextual-writing-skill --skill '*' --agent codex --yes
 ```
 
-Requires Node.js and npm. Keep `'*'` quoted and install all ten skills: focused workflows reference shared rules in sibling folders. This installs skills through the [Skills CLI](https://github.com/vercel-labs/skills), not the plugin manifest. Choose either this route or a native plugin installation to avoid duplicate skills.
+Requires Node.js and npm. Keep `'*'` quoted and install all ten skills, which share supporting files. Use either the [Skills CLI](https://github.com/vercel-labs/skills) or a native plugin installation to avoid duplicates.
 
 <details>
 <summary><strong>Already using the Codex plugin?</strong></summary>
 
-Keep your existing installation and invoke `$contextual-writing`. Codex reads `.codex-plugin/plugin.json`; Claude Code and Claude Cowork use `.claude-plugin/plugin.json`. Both manifests share the same skills, references, templates, and guards. The Claude marketplace configuration is separate.
+Keep that installation and invoke `$contextual-writing`. There is no need to install the skills again through npx.
 
 </details>
 
 ## See the difference
 
-**Illustrative edit with a fictional applicant.** Supplied facts: mapped an onboarding workflow and supported implementation for three customers. No leadership role or measured improvement was provided.
+A fictional applicant mapped an onboarding workflow and helped implement it for three customers.
 
-| Draft | Evidence-preserving revision |
+| Before | After |
 | :--- | :--- |
 | “I spearheaded a transformative onboarding initiative, driving significant customer success and operational excellence.” | “I mapped the onboarding workflow and supported implementation for three customers.” |
-
-The revision makes the work concrete while preserving the applicant's actual contribution. This demonstrates the intended approach; it is not a measured benchmark result.
 
 ### Try it on your own material
 
 ```text
 Application writing
 Write a cover letter using my CV and this job description.
-Ask for missing evidence. Do not invent achievements. Write in German.
+Ask if you need more detail about my experience. Write in German.
 
 Academic writing
-Revise this discussion paragraph. Keep the citations and uncertainty;
-make the implication clearer without extending the findings.
+Edit this discussion paragraph for clarity. Keep the citations and
+qualifiers, and do not add conclusions the findings do not support.
 
 Outreach
-Draft an email from this verified company update and our pilot result.
-Treat the possible customer problem as a hypothesis. Use one clear CTA.
+Draft a short email using this company update and our pilot result.
+Do not assume the company has the problem we solve. End with one clear ask.
 ```
 
 ## How it handles your writing
 
-- **Context first.** Reuse supplied material and ask only for gaps that change the answer.
-- **Claims stay grounded.** Preserve ownership, qualifications, metrics, citations, uncertainty, and intentional cuts.
-- **Instructions are not just style samples.** Explicit requirements take priority over ordinary style defaults. Later corrections apply in their stated context, not automatically to every future task.
-- **Editing has a stopping point.** Change passages with a concrete problem. Leave fit-for-purpose text alone.
-- **Submission checks come last.** Check hard limits, requested fields, recipient-facing wording, and claim strength before calling the result ready.
-
-A mandatory submission rule cannot be waived by a style preference. When requirements conflict, the skill identifies the conflict rather than silently dropping one.
+- Uses the brief and source material before asking questions.
+- Preserves facts, citations, uncertainty, and deliberate cuts.
+- Follows your explicit instructions rather than guessing from a style sample.
+- Leaves good passages unchanged.
+- Checks word limits, required fields, and other submission requirements.
 
 ## Components
 
-One router selects the workflow that owns the deliverable. Editing and research can support it without replacing it.
+The main skill selects the relevant workflow. You can also invoke a focused skill directly.
 
 | Skill | Primary scope |
 | --- | --- |
-| `contextual-writing` | Automatic router, context gate, evidence rules, language selection, and optional profile use |
-| `write-career-documents` | CVs, resumes, cover letters, proactive internship or job outreach, application fields, biographies, and professional profiles |
-| `write-professional-communication` | Emails, messages, memos, meeting follow-ups, reports, technical, administrative, and legal-context communication |
-| `write-commercial-content` | Evidence-led sales outreach, customer, buyer, partner, marketing, web, and competitive content |
-| `write-academic-content` | Academic paragraphs, abstracts, paper sections, literature syntheses, and scholarly revisions from supplied material |
-| `write-research-content` | Lightweight academic, legal, company, product, and fact-check research |
-| `write-slides-and-strategy` | Consulting, strategy, startup, investor, sales, and decision-led slide narratives |
-| `write-general-content` | Articles, essays, posts, website copy, personal prose, and other general writing |
-| `edit-and-humanize` | Context-aware audits, minimal edits, voice calibration, translation review, and null edits |
-| `teach-and-explain` | Explanations, tutoring, exam support, and accessible learning material |
+| `contextual-writing` | Selects the workflow, language, and relevant writing rules |
+| `write-career-documents` | CVs, cover letters, applications, career outreach, and profiles |
+| `write-professional-communication` | Emails, memos, follow-ups, reports, and administrative messages |
+| `write-commercial-content` | Sales outreach, marketing, customer, and partner communication |
+| `write-academic-content` | Academic drafting and revision from supplied sources |
+| `write-research-content` | Source research and fact-checking |
+| `write-slides-and-strategy` | Slide narratives, pitches, and strategy presentations |
+| `write-general-content` | Articles, essays, newsletters, posts, and website copy |
+| `edit-and-humanize` | Editing, style matching, and translation review |
+| `teach-and-explain` | Explanations, tutoring, and study material |
 
-Codex invocation metadata makes the router the automatic entry point and keeps focused skills explicit. Claude and other agents use their own discovery rules; Codex metadata does not configure them. You can explicitly invoke the router to select a focused workflow.
+In Codex, only the main skill is configured for automatic selection. Other agents use their own discovery rules.
 
 ## Template gallery
 
-Open a preview to inspect the complete PDF directly on GitHub. Each English example fits on one A4 page and uses fictional experience. German writing remains supported across all workflows.
+Three fictional English examples, each on one A4 page. Open a preview to read the PDF or download the editable Word file.
 
 | Dense CV | Early-career CV | Cover letter |
 | :---: | :---: | :---: |
 | [![Dense CV preview](docs/previews/generic-cv-template-1.png)](docs/previews/generic-cv-template.pdf) | [![Early-career CV preview](docs/previews/generic-cv-template-early-career-1.png)](docs/previews/generic-cv-template-early-career.pdf) | [![Cover letter preview](docs/previews/generic-cover-letter-template-1.png)](docs/previews/generic-cover-letter-template.pdf) |
 | [PDF](docs/previews/generic-cv-template.pdf) · [Word](skills/write-career-documents/assets/generic-cv-template.docx) | [PDF](docs/previews/generic-cv-template-early-career.pdf) · [Word](skills/write-career-documents/assets/generic-cv-template-early-career.docx) | [PDF](docs/previews/generic-cover-letter-template.pdf) · [Word](skills/write-career-documents/assets/generic-cover-letter-template.docx) |
 
-Replace the fictional content with verified experience. These are starting points, not a universal page-count or layout rule. Creating and visually checking new Word or PDF files requires document tools in your host environment.
+Replace the example content with your own experience. Layout and length should follow the application requirements.
 
-## Context and privacy
+## Tools you need
 
-The package does not include a private biography, chat export, personal writing samples, or a populated user profile. Optional profile and intake templates are blank; document examples are fictional. Saving a profile requires an explicit request and destination. Sensitive traits are not inferred or inserted into a document merely because they were shared for collaboration.
+The plugin adds writing instructions and templates to your agent. Research needs web access. Creating Word, PDF, or slide files needs document tools, which are not included.
 
-Material you provide is handled by your AI platform and connected tools under their settings. The plugin is not a separate privacy or data-processing service.
-
-## Product boundary
-
-The plugin does not optimise for AI-detector scores or promise to conceal authorship. Academic Content handles scholarly writing from supplied evidence; Research Content handles lightweight evidence gathering. Deep academic research, legal advice, CRM-grounded sales work, and editable slide production need the relevant specialist tools or professionals.
-
-Surface checks cannot certify factual or semantic correctness. Word and character counts do not replace the destination's own counter.
-
-## Source method
-
-The rules combine independently formulated writing principles, anonymized lessons from repeated editing work, and selected concepts from the sources listed in `NOTICE.md`. No personal examples or third-party pattern catalogues are copied into the runtime instructions.
+The research skill covers focused questions and fact-checking, not a full literature review or legal advice.
 
 ## Validation
 
-Run every deterministic package, routing, privacy, guard, and contract test with:
+Run the package and helper-script tests:
 
 ```bash
 python3 scripts/run_tests.py
 ```
 
-For behavioral evaluation, use [the scenarios](tests/forward_cases.json) with [the fresh-context review protocol](tests/FORWARD_TESTING.md). Record the actual outputs and limitations. The deterministic test command validates scenario structure and coverage, **not the quality of generated writing**.
+The tests check package structure and helper scripts. To review the writing itself, use the [example tasks](tests/forward_cases.json) and [review guide](tests/FORWARD_TESTING.md).
 
-Found a weak output? [Open an issue](https://github.com/optimelv/contextual-writing-skill/issues) with an anonymised brief, expected behavior, actual result, and model/plugin version. Remove private source material before posting.
+To [report a problem](https://github.com/optimelv/contextual-writing-skill/issues), include the prompt, expected result, actual output, and model/plugin version. Remove private information first.
 
 ---
 

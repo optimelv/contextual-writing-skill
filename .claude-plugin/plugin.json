@@ -1,7 +1,7 @@
 {
   "name": "contextual-writing",
   "version": "0.1.4",
-  "description": "A context-aware German and English writing, editing, intake, and lightweight research system.",
+  "description": "German and English writing skills for applications, academic work, emails, research, and slides.",
   "homepage": "https://github.com/optimelv/contextual-writing-skill",
   "repository": "https://github.com/optimelv/contextual-writing-skill",
   "author": {
