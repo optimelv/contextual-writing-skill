@@ -187,7 +187,7 @@ class PackageTests(unittest.TestCase):
             cv_xml = archive.read("word/document.xml").decode(
                 "utf-8", errors="ignore"
             )
-        self.assertIn("10/2024 – 09/2026 (voraussichtlich)", cv_xml)
+        self.assertIn("10/2024 – 09/2026 (expected)", cv_xml)
         self.assertNotIn("10/2024 – voraussichtlich 09/2026", cv_xml)
 
         with ZipFile(assets / "generic-cover-letter-template.docx") as archive:

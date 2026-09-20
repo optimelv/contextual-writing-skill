@@ -11,7 +11,7 @@
 
 <p align="center"><strong>Ten writing workflows. One shared set of principles.</strong><br>Write, research, edit, and review with the reader, evidence, and author's voice in view.</p>
 
-<p align="center"><a href="#install">Install</a> · <a href="#see-the-difference">See the difference</a> · <a href="#components">Explore the skills</a> · <a href="#validation">Validation</a></p>
+<p align="center"><a href="#install">Install</a> · <a href="#see-the-difference">See the difference</a> · <a href="#template-gallery">Preview templates</a> · <a href="#components">Explore the skills</a> · <a href="#validation">Validation</a></p>
 
 ---
 
@@ -84,15 +84,15 @@ The revision makes the work concrete while preserving the applicant's actual con
 ### Bring a real task
 
 ```text
-DE · Bewerbung
-Erstelle ein Anschreiben aus meinem Lebenslauf und dieser Stellenanzeige.
-Frage gezielt nach fehlenden Belegen. Erfinde keine Ergebnisse.
+Application writing
+Write a cover letter using my CV and this job description.
+Ask for missing evidence. Do not invent achievements. Write in German.
 
-EN · Academic writing
+Academic writing
 Revise this discussion paragraph. Keep the citations and uncertainty;
 make the implication clearer without extending the findings.
 
-EN · Outreach
+Outreach
 Draft an email from this verified company update and our pilot result.
 Treat the possible customer problem as a hypothesis. Use one clear CTA.
 ```
@@ -122,20 +122,29 @@ flowchart LR
 
 Codex invocation metadata makes the router the automatic entry point and keeps focused skills explicit. Claude and other agents use their own discovery rules; Codex metadata does not configure them. You can explicitly invoke the router to select a focused workflow.
 
+## Template gallery
+
+Open a preview to inspect the complete PDF directly on GitHub. Each English example fits on one A4 page and uses fictional experience. German writing remains supported across all workflows.
+
+| Dense CV | Early-career CV | Cover letter |
+| :---: | :---: | :---: |
+| [![Dense CV preview](docs/previews/generic-cv-template-1.png)](docs/previews/generic-cv-template.pdf) | [![Early-career CV preview](docs/previews/generic-cv-template-early-career-1.png)](docs/previews/generic-cv-template-early-career.pdf) | [![Cover letter preview](docs/previews/generic-cover-letter-template-1.png)](docs/previews/generic-cover-letter-template.pdf) |
+| [View PDF](docs/previews/generic-cv-template.pdf) | [View PDF](docs/previews/generic-cv-template-early-career.pdf) | [View PDF](docs/previews/generic-cover-letter-template.pdf) |
+
 <details>
-<summary><strong>Explore the included Word templates</strong></summary>
+<summary><strong>Download editable Word templates</strong></summary>
 
-- [Dense CV](skills/write-career-documents/assets/generic-cv-template.docx)
-- [Early-career CV](skills/write-career-documents/assets/generic-cv-template-early-career.docx)
-- [Formal cover letter](skills/write-career-documents/assets/generic-cover-letter-template.docx)
+- [Dense CV (.docx)](skills/write-career-documents/assets/generic-cv-template.docx)
+- [Early-career CV (.docx)](skills/write-career-documents/assets/generic-cv-template-early-career.docx)
+- [Cover letter (.docx)](skills/write-career-documents/assets/generic-cover-letter-template.docx)
 
-All content is fictional. Creating and visually checking final Word or PDF files requires document tools in the host environment.
+These are editable sources for the PDF previews. Replace the fictional content with verified experience. Creating and visually checking new Word or PDF files requires document tools in your host environment.
 
 </details>
 
 ## Context and privacy
 
-The plugin contains no personal biography, private writing samples, chat export, or user profile. Optional profile and intake templates contain blank fields only. Users decide whether to provide or save personal context. Sensitive traits are never inferred, required by default, or inserted into a document without explicit authorization.
+The distributed plugin contains no private biography, writing samples, chat export, or user profile. Optional profile and intake templates contain blank fields only. Users decide whether to provide or save personal context. Sensitive traits are never inferred, required by default, or inserted into a document without explicit authorization. Material you supply is handled by your chosen AI platform and connected tools under their settings.
 
 Career-document assets include anonymized native Word templates for a dense consulting-style CV, a sparse early-career CV, and a formal cover letter. Their content is fictional and must be replaced. Layout is content-driven: spacing, typography and margins are adjusted incrementally and verified through rendering instead of being fixed globally.
 
