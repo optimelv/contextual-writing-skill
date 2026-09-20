@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Contextual Writing</title>
+  <desc id="desc">An open frame around two text lines: context around writing.</desc>
+  <rect width="128" height="128" rx="0" fill="#f7f5ef"/>
+  <path d="M92 20H24V108H92" fill="none" stroke="#222421" stroke-width="9" stroke-linecap="square"/>
+  <path d="M48 51H106M48 76H86" fill="none" stroke="#a3422e" stroke-width="9" stroke-linecap="butt"/>
+</svg>

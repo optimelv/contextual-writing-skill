@@ -1,25 +1,17 @@
-<p align="center">
-  <img src="docs/assets/hero.svg" alt="Contextual Writing: Your context. Your voice. German and English writing for Claude and Codex." width="1200">
+<p>
+  <img src="docs/assets/hero.png" alt="Contextual Writing. Your context. Your voice. Writing shaped by the reader and the evidence. Context, evidence, voice, review. German and English. Ten skills, one shared source, for Claude and Codex." width="1200">
 </p>
 
-<p align="center">
+<p>
   <a href="https://github.com/optimelv/contextual-writing-skill/actions/workflows/validate.yml"><img src="https://github.com/optimelv/contextual-writing-skill/actions/workflows/validate.yml/badge.svg" alt="Validation status"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-b6e7c8?labelColor=111c20" alt="MIT license"></a>
-  <img src="https://img.shields.io/badge/languages-DE%20%2B%20EN-b6e7c8?labelColor=111c20" alt="German and English">
-  <img src="https://img.shields.io/badge/for-Claude%20%26%20Codex-b6e7c8?labelColor=111c20" alt="For Claude and Codex">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-a3422e?labelColor=242421" alt="MIT license"></a>
 </p>
 
-<p align="center"><strong>Ten writing workflows. One shared set of principles.</strong><br>Write, research, edit, and review with the reader, evidence, and author's voice in view.</p>
+German and English writing skills for **Claude and Codex**. Draft, research, edit, and review using the actual brief, audience, evidence, and author's voice. A cover letter, a research paragraph, and a client email should not all sound the same.
 
-<p align="center"><a href="#install">Install</a> · <a href="#see-the-difference">See the difference</a> · <a href="#template-gallery">Preview templates</a> · <a href="#components">Explore the skills</a> · <a href="#validation">Validation</a></p>
-
----
-
-Contextual Writing is a shareable German and English writing plugin. It creates, researches, edits, and reviews content according to the real audience, purpose, language, evidence, risk, and output format. It does not impose one personality or one universal style.
+[Install](#install) · [Example](#see-the-difference) · [Templates](#template-gallery) · [Skills](#components) · [Validation](#validation)
 
 ## Install
-
-This repository is the single source of truth for both runtimes. Codex reads `.codex-plugin/plugin.json`; Claude Code and Claude Cowork read `.claude-plugin/plugin.json`. The skills, references, templates, guards, and tests are shared so the Claude version is kept current with the Codex version instead of becoming a separate fork.
 
 ### Claude Code: plugin installation
 
@@ -30,7 +22,7 @@ Inside Claude Code, add the marketplace and install the plugin:
 /plugin install contextual-writing@contextual-writing
 ```
 
-The repository hosts both the marketplace and the plugin. This is the recommended Claude installation for namespacing and plugin management.
+The repository contains both the marketplace and the plugin.
 
 <details>
 <summary><strong>Update or uninstall</strong></summary>
@@ -67,7 +59,7 @@ Requires Node.js and npm. Keep `'*'` quoted and install all ten skills: focused 
 <details>
 <summary><strong>Already using the Codex plugin?</strong></summary>
 
-Keep your existing installation and invoke `$contextual-writing`. The repository includes `.codex-plugin/plugin.json` for native Codex plugin packaging; the Claude marketplace configuration is separate.
+Keep your existing installation and invoke `$contextual-writing`. Codex reads `.codex-plugin/plugin.json`; Claude Code and Claude Cowork use `.claude-plugin/plugin.json`. Both manifests share the same skills, references, templates, and guards. The Claude marketplace configuration is separate.
 
 </details>
 
@@ -81,7 +73,7 @@ Keep your existing installation and invoke `$contextual-writing`. The repository
 
 The revision makes the work concrete while preserving the applicant's actual contribution. This demonstrates the intended approach; it is not a measured benchmark result.
 
-### Bring a real task
+### Try it on your own material
 
 ```text
 Application writing
@@ -97,15 +89,19 @@ Draft an email from this verified company update and our pilot result.
 Treat the possible customer problem as a hypothesis. Use one clear CTA.
 ```
 
-```mermaid
-flowchart LR
-    A[Your brief] --> B[Context and evidence]
-    B --> C[Relevant writing skill]
-    C --> D[Draft or edit]
-    D --> E[Meaning and submission review]
-```
+## How it handles your writing
+
+- **Context first.** Reuse supplied material and ask only for gaps that change the answer.
+- **Claims stay grounded.** Preserve ownership, qualifications, metrics, citations, uncertainty, and intentional cuts.
+- **Instructions are not just style samples.** Explicit requirements take priority over ordinary style defaults. Later corrections apply in their stated context, not automatically to every future task.
+- **Editing has a stopping point.** Change passages with a concrete problem. Leave fit-for-purpose text alone.
+- **Submission checks come last.** Check hard limits, requested fields, recipient-facing wording, and claim strength before calling the result ready.
+
+A mandatory submission rule cannot be waived by a style preference. When requirements conflict, the skill identifies the conflict rather than silently dropping one.
 
 ## Components
+
+One router selects the workflow that owns the deliverable. Editing and research can support it without replacing it.
 
 | Skill | Primary scope |
 | --- | --- |
@@ -129,30 +125,21 @@ Open a preview to inspect the complete PDF directly on GitHub. Each English exam
 | Dense CV | Early-career CV | Cover letter |
 | :---: | :---: | :---: |
 | [![Dense CV preview](docs/previews/generic-cv-template-1.png)](docs/previews/generic-cv-template.pdf) | [![Early-career CV preview](docs/previews/generic-cv-template-early-career-1.png)](docs/previews/generic-cv-template-early-career.pdf) | [![Cover letter preview](docs/previews/generic-cover-letter-template-1.png)](docs/previews/generic-cover-letter-template.pdf) |
-| [View PDF](docs/previews/generic-cv-template.pdf) | [View PDF](docs/previews/generic-cv-template-early-career.pdf) | [View PDF](docs/previews/generic-cover-letter-template.pdf) |
+| [PDF](docs/previews/generic-cv-template.pdf) · [Word](skills/write-career-documents/assets/generic-cv-template.docx) | [PDF](docs/previews/generic-cv-template-early-career.pdf) · [Word](skills/write-career-documents/assets/generic-cv-template-early-career.docx) | [PDF](docs/previews/generic-cover-letter-template.pdf) · [Word](skills/write-career-documents/assets/generic-cover-letter-template.docx) |
 
-<details>
-<summary><strong>Download editable Word templates</strong></summary>
-
-- [Dense CV (.docx)](skills/write-career-documents/assets/generic-cv-template.docx)
-- [Early-career CV (.docx)](skills/write-career-documents/assets/generic-cv-template-early-career.docx)
-- [Cover letter (.docx)](skills/write-career-documents/assets/generic-cover-letter-template.docx)
-
-These are editable sources for the PDF previews. Replace the fictional content with verified experience. Creating and visually checking new Word or PDF files requires document tools in your host environment.
-
-</details>
+Replace the fictional content with verified experience. These are starting points, not a universal page-count or layout rule. Creating and visually checking new Word or PDF files requires document tools in your host environment.
 
 ## Context and privacy
 
-The distributed plugin contains no private biography, writing samples, chat export, or user profile. Optional profile and intake templates contain blank fields only. Users decide whether to provide or save personal context. Sensitive traits are never inferred, required by default, or inserted into a document without explicit authorization. Material you supply is handled by your chosen AI platform and connected tools under their settings.
+The package does not include a private biography, chat export, personal writing samples, or a populated user profile. Optional profile and intake templates are blank; document examples are fictional. Saving a profile requires an explicit request and destination. Sensitive traits are not inferred or inserted into a document merely because they were shared for collaboration.
 
-Career-document assets include anonymized native Word templates for a dense consulting-style CV, a sparse early-career CV, and a formal cover letter. Their content is fictional and must be replaced. Layout is content-driven: spacing, typography and margins are adjusted incrementally and verified through rendering instead of being fixed globally.
+Material you provide is handled by your AI platform and connected tools under their settings. The plugin is not a separate privacy or data-processing service.
 
 ## Product boundary
 
-The plugin improves reader fit, truthfulness, clarity, register, and voice. It does not optimize for AI detector scores or promise to conceal authorship. Academic Content owns scholarly drafting and revision from supplied evidence; Research Content owns lightweight evidence gathering; deep academic research remains owned by specialist workflows. Legal advice, CRM-grounded sales workflows, and editable slide production remain owned by specialist plugins or qualified professionals. Contextual Writing prepares inputs, provides a safe lightweight path, and hands off when depth or risk requires it.
+The plugin does not optimise for AI-detector scores or promise to conceal authorship. Academic Content handles scholarly writing from supplied evidence; Research Content handles lightweight evidence gathering. Deep academic research, legal advice, CRM-grounded sales work, and editable slide production need the relevant specialist tools or professionals.
 
-Recipient-visible and hard-limit artifacts use a shared submission-readiness gate for exact instructions, word or character limits, internal-note separation, semantic one-action checks, target specificity, and claim strength. A deterministic helper checks surface constraints but does not replace semantic review or the destination's own counter.
+Surface checks cannot certify factual or semantic correctness. Word and character counts do not replace the destination's own counter.
 
 ## Source method
 
@@ -166,10 +153,10 @@ Run every deterministic package, routing, privacy, guard, and contract test with
 python3 scripts/run_tests.py
 ```
 
-Use `tests/forward_cases.json` together with `tests/FORWARD_TESTING.md` for versioned fresh-model forward tests that evaluate actual writing behavior. The deterministic test command validates the pack protocol, but it does not score generated outputs or claim benchmark performance.
+For behavioral evaluation, use [the scenarios](tests/forward_cases.json) with [the fresh-context review protocol](tests/FORWARD_TESTING.md). Record the actual outputs and limitations. The deterministic test command validates scenario structure and coverage, **not the quality of generated writing**.
 
-Found a weak output? [Open an issue](https://github.com/optimelv/contextual-writing-skill/issues) with an anonymized brief, expected behavior, actual result, model and plugin version.
+Found a weak output? [Open an issue](https://github.com/optimelv/contextual-writing-skill/issues) with an anonymised brief, expected behavior, actual result, and model/plugin version. Remove private source material before posting.
 
 ---
 
-<p align="center">Built for thoughtful writing in German and English.<br><a href="LICENSE">MIT license</a> · <a href="NOTICE.md">Sources and acknowledgments</a></p>
+[MIT license](LICENSE) · [Sources and acknowledgments](NOTICE.md)

@@ -49,14 +49,14 @@ Apply this order:
 2. Supplied facts, sources, quotations, templates, rubrics, and hard limits.
 3. Safety, law, academic integrity, and professional obligations that actually apply.
 4. Deliverable, audience, organization, discipline, and language conventions.
-5. User-approved profile and representative writing samples.
+5. Soft preferences from a user-approved profile and representative writing samples. Still-applicable explicit profile requirements belong with explicit instructions, not inferred style tendencies.
 6. Generic writing heuristics.
 
 Never impose academic, legal, sales, casual, or minimalist conventions outside their context. A good legal clause may be dense. A strong sales message may be persuasive. A personal essay may use fragments. Diagnose before changing.
 
 ## Optional personalization
 
-Read [style calibration](references/style-calibration.md) when the user supplies past writing or requests a reusable profile. Use [the blank profile template](assets/user-context-profile.template.yaml) only with user authorization. Never infer sensitive traits. Never disclose age, disability, health, nationality, religion, family status, or other protected information in an output unless the user explicitly requests it and the context supports disclosure.
+Read [style calibration](references/style-calibration.md) when using an approved profile, when the user supplies past writing, or when they request a reusable profile. Use [the blank profile template](assets/user-context-profile.template.yaml) only with user authorization. Never infer sensitive traits. Never disclose age, disability, health, nationality, religion, family status, or other protected information in an output unless the user explicitly requests it and the context supports disclosure.
 
 ## Editing safeguards
 

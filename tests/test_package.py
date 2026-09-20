@@ -81,13 +81,6 @@ class PackageTests(unittest.TestCase):
     def test_native_career_templates_exist_and_are_anonymized(self) -> None:
         assets = ROOT / "skills/write-career-documents/assets"
         templates = [assets / name for name in CAREER_TEMPLATE_NAMES]
-        forbidden = [
-            "melvin",
-            "friedrichsen",
-            "icloud.com",
-            "horváth",
-            "klixbüll",
-        ]
         for template in templates:
             self.assertTrue(template.is_file(), template)
             with ZipFile(template) as archive:
@@ -96,8 +89,11 @@ class PackageTests(unittest.TestCase):
                     for name in archive.namelist()
                     if name.endswith(".xml")
                 ).lower()
-            for value in forbidden:
-                self.assertNotIn(value, xml, f"{template.name}: {value}")
+            # Keep private source identifiers out of the published tests too.
+            for label in ("absolute_user_path", "chat_export_identifier"):
+                self.assertNotRegex(xml, PRIVATE_PATTERNS[label], template.name)
+            for match in EMAIL_PATTERN.finditer(xml):
+                self.assertEqual(match.group(1).lower(), "example.com", template.name)
 
     def test_all_native_career_templates_have_safe_a4_package_structure(self) -> None:
         """Check the three shipped Word assets, not only the sparse CV."""

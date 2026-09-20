@@ -1,5 +1,5 @@
 {
-  "version": "1.3",
+  "version": "1.4",
   "evaluation": {
     "mode": "manual_fresh_model",
     "execution": "Run each case in a fresh model context and record the output against the required and forbidden properties.",
@@ -13,6 +13,38 @@
     "quality_claim": "This pack defines a repeatable qualitative review protocol. It does not contain model scores or prove comparative model performance."
   },
   "cases": [
+    {
+      "id": "router_02_explicit_profile_requirement",
+      "route": "contextual-writing",
+      "prompt": "Use this approved profile for a British English client email: explicit requirement, no em or en dashes in prose; soft preference, short sentences. Older approved sample: 'The review is complete — the next step is yours.' The team's ordinary email style often uses dash asides, but there is no mandatory format. Write a polite email to Sam in at most 55 words: the review is complete, two figures still need confirmation, and ask Sam to confirm those figures by Thursday. Do not add an attachment, a meeting or other facts. Return only the email.",
+      "required_properties": ["honour the explicit punctuation requirement over the old sample and ordinary house convention", "preserve all supplied facts and the single confirmation request", "draft directly within 55 words"],
+      "forbidden_properties": ["use an em or en dash in the email", "ask unnecessary style questions", "invent an attachment or meeting"],
+      "scoring_dimensions": ["requirement precedence", "claim preservation", "recipient-ready brevity"]
+    },
+    {
+      "id": "router_03_scoped_later_correction",
+      "route": "contextual-writing",
+      "prompt": "Approved German email profile: use Sie with external contacts and du with the internal team. An older approved client-email sample begins 'Sehr geehrte Frau Weber'. Later explicit correction: 'Nur bei Lea Weber bitte du; wir haben das inzwischen vereinbart. Für andere externe Kontakte bleibt Sie.' Draft two separate short German emails: A to Lea Weber, asking her to confirm receipt of the report; B to the new external contact Herr König, asking him to confirm receipt of the proposal. No deadlines or other facts. Return only emails A and B. Do not save or change a reusable profile.",
+      "required_properties": ["use du for Lea Weber following the later correction", "retain Sie for Herr König", "keep each request tied to the correct document and scope"],
+      "forbidden_properties": ["retain Sie for Lea solely because of the older sample", "generalize du to all external contacts", "claim to save a global preference or add deadlines"],
+      "scoring_dimensions": ["correction precedence", "scope control", "fact and address consistency"]
+    },
+    {
+      "id": "router_04_authored_voice_not_chat_errors",
+      "route": "contextual-writing",
+      "prompt": "pls match my newsletter voice dont overdo it im typing fast. Here are two deliberately authored samples: 'Small team. Clear roles. We test one change at a time.' and 'No fanfare. Just a useful improvement. Then we measure it.' I intentionally use fragments and standard spelling in these samples. Draft a new British English internal newsletter update of at most 35 words using only these facts: the team tested a new handover checklist this week; results are not available yet. Return only the update, with no greeting or sign-off.",
+      "required_properties": ["use the deliberately authored concise fragment-based voice", "use standard spelling rather than raw instruction shorthand", "preserve the absence of results"],
+      "forbidden_properties": ["imitate accidental instruction errors such as pls or im", "remove all intentional fragments to enforce generic formal prose", "claim a successful result or invented benefit"],
+      "scoring_dimensions": ["sample selection", "intentional voice preservation", "evidence discipline"]
+    },
+    {
+      "id": "router_05_mandatory_constraint_conflict",
+      "route": "contextual-writing",
+      "prompt": "My approved profile explicitly requires at least 100 words in each application answer. This application portal has a mandatory maximum of 50 words. I have not authorised an exception to either requirement. Produce a final answer satisfying both, using these supplied facts only: I supported a customer onboarding project, and the advertised role involves onboarding analysis. No research or extra facts are needed.",
+      "required_properties": ["identify that the word constraints cannot both be satisfied", "request a narrow decision about relaxing the profile minimum for this application", "do not claim a final compliant answer exists"],
+      "forbidden_properties": ["silently ignore either word constraint", "present an over-limit answer as submission-ready", "invent facts or ask unrelated intake questions"],
+      "scoring_dimensions": ["conflict detection", "mandatory constraint protection", "clarification precision"]
+    },
     {
       "id": "router_01_context_gate",
       "route": "contextual-writing",
@@ -249,7 +281,7 @@
     {
       "id": "teaching_01_exam_explanation",
       "route": "teach-and-explain",
-      "prompt": "Explain the difference between correlation and causation to a Master's student with strong analytical skills and dyslexia. Use a compact structure, one concrete business example, and a short check for understanding.",
+      "prompt": "Explain the difference between correlation and causation to a learner who requests short steps, visible structure, and stable terminology without reducing conceptual depth. Use one concrete business example and a short check for understanding.",
       "required_properties": [
         "adapt structure and cognitive load to the stated learning needs",
         "explain the concept accurately without oversimplifying the distinction",
