@@ -14,5 +14,7 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@v5
+      - name: Install PDF preview checker
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
       - name: Run deterministic tests
         run: python3 scripts/run_tests.py
